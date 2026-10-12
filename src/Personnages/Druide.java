@@ -46,7 +46,7 @@ public class Druide {
 		        
 		        String nomGaulois = gaulois.getNom();
 		        
-		        if (nomGaulois.equals("Obélix")) {
+		        if (nomGaulois != null && nomGaulois.equals("Obélix")) {
 		            parler("Non, " + nomGaulois + " ! Et tu le sais très bien !");
 		        } 
 		        else {
