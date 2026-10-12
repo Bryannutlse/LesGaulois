@@ -5,7 +5,7 @@ package Personnages;
 public class Druide {
 	private String nom;
 	private int force;
-	private Chaudron chaudron;
+	private Chaudron chaudron = new Chaudron();
 	
 	
 	
@@ -14,6 +14,17 @@ public class Druide {
 	}
 	
 	
+	
+	
+	public Druide(String nom, int force) {
+		
+		this.nom = nom;
+		this.force = force;
+	}
+
+
+
+
 	public void parler(String texte) {
 		System.out.println(prendreParole() + "\"" + texte + "\"");
 		
@@ -25,6 +36,8 @@ public class Druide {
 	
 	public void fabriquerPotion(int quantite , int forcePotion) {
 		chaudron.remplirChaudron(quantite,forcePotion);
+		parler("J'ai concocté " + quantite + " doses de potion magique. Elle a une force de" 
+		+ forcePotion + ".");
 		
 	}
 	
@@ -39,7 +52,7 @@ public class Druide {
 		        else {
 		            chaudron.prendreLouche();
 		            
-		            int forcePotion = chaudron.forcePotion();
+		            int forcePotion = chaudron.prendreLouche();
 		            
 		            gaulois.boirePotion(forcePotion);
 		            
